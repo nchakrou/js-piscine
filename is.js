@@ -1,6 +1,6 @@
 is.num = (n) => typeof n === "number";
-is.isnan = (n) => Number.isNaN(n);
-is.isstr = (n) => typeof n === "string";
+is.nan = (n) => Number.isNaN(n);
+is.str = (n) => typeof n === "string";
 is.bool = (n) => typeof n === "boolean";
 is.undef = (n) => typeof n === "undefined";
 is.def = (n) => typeof n !== "undefined";
