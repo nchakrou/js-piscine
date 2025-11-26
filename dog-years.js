@@ -1,5 +1,5 @@
 function dogYears(name, age) {
-  const Years = (age / 31557600) * 7;
+  let Years = (age / 31557600) * 7;
   switch (name) {
     case "mercury":
       Years /= 0.2408467;
@@ -31,4 +31,4 @@ function dogYears(name, age) {
   }
   return Math.round(Years * 100) / 100;
 }
-console.log(dogYears("earth", 1000000000));
+console.log(dogYears("mercury", 2134835688));
