@@ -1,0 +1,1 @@
+const max = (n,m)=>n>m?n:m
