@@ -3,6 +3,7 @@ function dogYears(name, age) {
   switch (name) {
     case "mercury":
       Years /= 0.2408467;
+      break;
     case "venus":
       Years /= 0.61519726;
     case "mars":
