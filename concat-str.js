@@ -1,1 +1,1 @@
-const concatStr = (n, m) => n + m;
+const concatStr = (n, m) => ""+n + m ;
