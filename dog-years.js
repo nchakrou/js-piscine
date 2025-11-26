@@ -1,20 +1,34 @@
 function dogYears(name, age) {
-  const Years = (age / 60 / 60 / 24 / 365) * 7;
+  const Years = (age / 31557600) * 7;
   switch (name) {
     case "mercury":
-      return Years / 0.2408467;
+      Years /= 0.2408467;
+      break;
+
     case "venus":
-      return Years / 0.61519726;
+      Years /= 0.61519726;
+      break;
+
     case "mars":
-      return Years / 1.8808158;
+      Years /= 1.8808158;
+      break;
+
     case "jupiter":
-      return Years / 11.862615;
+      Years /= 11.862615;
+      break;
+
     case "saturn":
-      return Years / 29.447498;
+      Years /= 29.447498;
+      break;
+
     case "uranus":
-      return Years / 84.016846;
+      Years /= 84.016846;
+      break;
+
     case "neptune":
-      return Years / 164.79132;
+      Years /= 164.79132;
+      break;
   }
-  return Years;
+  return Math.round(Years * 100) / 100;
 }
+console.log(dogYears("earth", 1000000000));
