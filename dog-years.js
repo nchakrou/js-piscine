@@ -6,16 +6,22 @@ function dogYears(name, age) {
       break;
     case "venus":
       Years /= 0.61519726;
+      break;
     case "mars":
       Years /= 1.8808158;
+      break;
     case "jupiter":
       Years /= 11.862615;
+      break;
     case "saturn":
       Years /= 29.447498;
+      break;
     case "uranus":
       Years /= 84.016846;
+      break;
     case "neptune":
       Years /= 164.79132;
+      break;
   }
   return Math.round(Years * 100) / 100;
 }
