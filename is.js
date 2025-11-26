@@ -1,13 +1,11 @@
-const is = {
-  num: (n) => typeof n == "number",
-  nan: (n) => Number.isNaN(n),
-  str: (n) => typeof n == "string",
-  bool: (n) => typeof n == "boolean",
-  undef: (n) => typeof n == "undefined",
-  def: (n) => typeof n != "undefined",
-  arr: (n) => Array.isArray(n),
-  obj: (n) => typeof n == "object" && n != null && !arr(n),
-  fun: (n) => typeof n == "function",
-  truthy: (n) => !!n,
-  falsy: (n) => !n,
-};
+is.num = (n) => typeof n == "number";
+is.isnan = (n) => Number.isNaN(n);
+is.isstr = (n) => typeof n == "string";
+is.bool = (n) => typeof n == "boolean";
+is.undef = (n) => typeof n == "undefined";
+is.def = (n) => typeof n != "undefined";
+is.arr = (n) => Array.isArray(n);
+is.obj = (n) => typeof n == "object" && n != null && !arr(n);
+is.fun = (n) => typeof n == "function";
+is.truthy = (n) => !!n;
+is.falsy = (n) => !n;
