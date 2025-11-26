@@ -1,2 +1,2 @@
 const id = (n)=>n;
-const getLength = (n)=>n.getLength;
+const getLength = (n)=>n.length;
