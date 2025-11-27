@@ -8,7 +8,7 @@ function getAcceleration(obj){
         return obj.Δv /obj.Δt
     }
     if (isnum(obj.d) && isnum(obj.t)){
-        return (2*obj.d) /(obj.Δt*obj.Δt)
+        return (2*obj.d) /(obj.t*obj.t)
     }
     return "impossible"
 }
