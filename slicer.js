@@ -1,4 +1,4 @@
-function slice(arg, start, end = arg.length - 1) {
+function slice(arg, start, end = arg.length) {
   if (start < 0) {
     start = arg.length + start;
   }
@@ -21,3 +21,4 @@ function slice(arg, start, end = arg.length - 1) {
   }
   return res;
 }
+console.log(slice('abcdef', 0, 2) === 'ab')
