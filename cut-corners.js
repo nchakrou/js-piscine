@@ -1,7 +1,13 @@
 function ceil(n){
+    if (modulo(n,1)===0){
+return n
+    }
     return  trunc(n)+1
 }
 function floor(n){
+    if (modulo(n,1)===0){
+return n
+    }
     return  trunc(n)-1
 }
 function round(n){
