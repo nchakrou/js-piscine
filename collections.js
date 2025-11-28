@@ -35,6 +35,9 @@ const strToObj = (n)=>{
     return obj
 }
 function superTypeOf(n){
+    if (n === undefined){
+        return "undefined"
+    }
     if (n ===null) {
         return "null"
     }
@@ -47,6 +50,6 @@ function superTypeOf(n){
     if (n instanceof Set){
         return "Set"
     }
-  
-    return typeof n
+    let res = typeof n
+ return res.charAt(0).toUpperCase() + res.slice(1);
 }
