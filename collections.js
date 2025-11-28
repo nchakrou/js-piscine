@@ -45,7 +45,7 @@ function superTypeOf(n){
         return "Map"
     }
     if (n instanceof Set){
-        return "set"
+        return "Set"
     }
   
     return typeof n
