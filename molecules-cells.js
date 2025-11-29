@@ -11,6 +11,7 @@ function RNA(str) {
       res += "U";
     }
   }
+  return res
 }
 function DNA(str) {
   let res = "";
@@ -25,4 +26,5 @@ function DNA(str) {
       res += "A";
     }
   }
+  return res
 }
