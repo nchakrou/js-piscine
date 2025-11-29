@@ -60,9 +60,3 @@ function trunc(n) {
   }
   return res * sign;
 }
-const nums =[3, -3, 3, -3, 0]
-console.log(nums.map(round), )
-console.log(nums.map(floor))
-console.log(nums.map(trunc))
-console.log(nums.map(ceil))
-console.log(-3.5 + trunc(3.5)<=-0.5)
