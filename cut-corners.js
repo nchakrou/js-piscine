@@ -8,6 +8,8 @@ function ceil(n) {
 
   return trunc(n) + 1;
 }
+
+
 function floor(n) {
   if (trunc(n) - n === 0) {
     return n;
@@ -17,11 +19,16 @@ function floor(n) {
   }
   return trunc(n);
 }
+
+
 function round(n) {
-  if (trunc(n) - n === 0) {
+  if (n-trunc(n)  === 0) {
     return n;
   }
   if (n < 0) {
+    if (n + trunc(n) > -0.5) {
+    return trunc(n);
+  }
     return trunc(n) - 1;
   }
   if (n - trunc(n) >= 0.5) {
@@ -29,6 +36,7 @@ function round(n) {
   }
   return trunc(n);
 }
+
 
 function trunc(n) {
   let sign = 1;
@@ -52,3 +60,9 @@ function trunc(n) {
   }
   return res * sign;
 }
+const nums =[3, -3, 3, -3, 0]
+console.log(nums.map(round), )
+console.log(nums.map(floor))
+console.log(nums.map(trunc))
+console.log(nums.map(ceil))
+console.log(-3.5 + trunc(3.5)<=-0.5)
