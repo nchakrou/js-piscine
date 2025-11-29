@@ -1,53 +1,54 @@
-function ceil(n){
-    if (modulo(n,1)===0){
-return n
-    }
-    return  trunc(n)+1
+function ceil(n) {
+  if (trunc(n) - n === 0) {
+    return n;
+  }
+  if (n < 0) {
+    return trunc(n);
+  }
+
+  return trunc(n) + 1;
 }
-function floor(n){
-    if (modulo(n,1)===0){
-return n
-    }
-    return  trunc(n)-1
+function floor(n) {
+  if (trunc(n) - n === 0) {
+    return n;
+  }
+  if (n < 0) {
+    return trunc(n) - 1;
+  }
+  return trunc(n);
 }
-function round(n){
-    if ( modulo(n,1)>=5){
-        return ceil(n)
-    }
-    return floor(n)
+function round(n) {
+  if (trunc(n) - n === 0) {
+    return n;
+  }
+  if (n < 0) {
+    return trunc(n) - 1;
+  }
+  if (n - trunc(n) >= 0.5) {
+    return floor(n) + 1;
+  }
+  return trunc(n);
 }
 
 function trunc(n) {
-    return n-(modulo(n,1))
-}
-
-
-console.log(modulo(3.5,1))
-
-function multiply(a,b){
-    if (a==0||b==0){
-        return 0
+  let sign = 1;
+  if (n < 0) {
+    n = -n;
+    sign = -1;
+  }
+  let b = 1;
+  while (b <= n) {
+    b *= 10;
+  }
+  let res = 0;
+  while (b >= 1) {
+    let count = 0;
+    while (n >= b) {
+      n -= b;
+      count++;
     }
-    if (b<0){
-        return multiply(-a,-b)
-    }
-    return a+=multiply(a,b-1)
-} 
-function divide(a,b){
-    if (a==0||b==0){
-        return 0
-    }
-    if (a<0){
-        return -(divide(-a,b))
-    }
-    if (b<0){
-        return -(divide(a,-b))
-    }
-    if (a>=b){
-        return 1 + divide(a - b, b)
-    }
-    return 0
-}
-function modulo(a,b){
-     return a - multiply(divide(a,b),b)
+    res = res * 10 + count;
+    b /= 10;
+  }
+  return res * sign;
 }
