@@ -1,40 +1,34 @@
 function ceil(n) {
-  if (trunc(n) - n === 0) {
-    return n;
-  }
-  if (n < 0) {
-    return trunc(n);
-  }
-
-  return trunc(n) + 1;
+if ((n>0)&&n-trunc(n)!==0){
+  return trunc(n)+1
+}
+return trunc(n)
 }
 
 
 function floor(n) {
-  if (trunc(n) - n === 0) {
-    return n;
-  }
-  if (n < 0) {
-    return trunc(n) - 1;
-  }
-  return trunc(n);
+if ((n<0)&&n-trunc(n)!==0){
+  return trunc(n)-1
+}
+return trunc(n)
+  
 }
 
 
 function round(n) {
-  if (n-trunc(n)  === 0) {
-    return n;
-  }
-  if (n < 0) {
-    if (n + trunc(n) > -0.5) {
-    return trunc(n);
-  }
-    return trunc(n) - 1;
-  }
-  if (n - trunc(n) >= 0.5) {
-    return floor(n) + 1;
-  }
-  return trunc(n);
+  let f = n-trunc(n)
+ if (n<0){
+  if (f<=-0.5){
+  return trunc(n)-1
+ }
+ }
+ if (f===0){
+  return n
+ }
+ if (f<=0.5){
+  return trunc(n)
+ }
+ return trunc(n)+1
 }
 
 
@@ -60,3 +54,4 @@ function trunc(n) {
   }
   return res * sign;
 }
+
