@@ -8,8 +8,8 @@ function isBefore(date1,date2){
     return date2>date1
 }
 function isFuture(date){
-    return isValid && date > new Date()
+    return isValid(date) && date > new Date()
 }
 function isPast(date){
-    return isValid && date < new Date()
+    return isValid(date) && date < new Date()
 }
