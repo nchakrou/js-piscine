@@ -10,6 +10,6 @@ function isBefore(date1,date2){
 function isFuture(date){
     return isValid && date > new Date()
 }
-function isFuture(date){
+function isPast(date){
     return isValid && date < new Date()
 }
