@@ -1,5 +1,5 @@
 function sunnySunday(date) {
-    def = new Date("0001-01-01")
+const def = new Date("0001-01-01")
   const days = [
     "Monday",
     "Tuesday",
