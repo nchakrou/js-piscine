@@ -5,7 +5,7 @@ function isWeekend(date) {
     return date.getDay() === 6 || date.getDay() === 0;
 }
 function isLeapYear(date) {
-    return date.getFullyear() % 4 === 0;
+    return date.getFullYear() % 4 === 0;
 }
 function isLastDayOfMonth(date) {
     const next = new Date(date);
