@@ -4,6 +4,11 @@ function firstDayWeek(number = 50, year = "2021") {
   while (date.getDay() > 1) {
     date.setDate(date.getDate() - 1);
   }
-  console.log(date.toString());
+  
+  console.log(date.getMonth());
+  if (date.getDate()<10){
+    return `0${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+  }
+  return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
 }
-firstDayWeek();
+console.log(firstDayWeek());
