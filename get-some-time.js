@@ -1,6 +1,9 @@
 function firstDayWeek(number, year) {
   const date = new Date(year + "-01-01");
   date.setDate(date.getDate() + (number - 1) * 7);
+  if (date.getDay() == 0) {
+    date.setDate(date.getDate() - 1);
+  }
   while (date.getDay() > 1) {
     date.setDate(date.getDate() - 1);
   }
@@ -17,4 +20,3 @@ function firstDayWeek(number, year) {
   }
   return `${mm}-${dd}-${year}`;
 }
-console.log(firstDayWeek(43, "1983"));
