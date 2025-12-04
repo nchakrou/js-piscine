@@ -7,13 +7,14 @@ function firstDayWeek(number, year) {
   if (date.getFullYear() < year) {
     return `01-01-${year}`;
   }
-  let dd = String(date.getDate());
-  if (date.getMonth() < 10) {
+  let dd = String(date.getMonth() + 1);
+  if (0 + dd < 10) {
     dd = "0" + dd;
   }
-  let mm = String(date.getMonth() + 1);
+  let mm = String(date.getDate());
   if (date.getDate() < 10) {
     mm = "0" + mm;
   }
-  return `${dd}-${mm}-${year}`;
+  return `${mm}-${dd}-${year}`;
 }
+console.log(firstDayWeek(43, "1983"));
