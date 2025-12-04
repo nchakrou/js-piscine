@@ -7,9 +7,13 @@ function firstDayWeek(number, year) {
     if (date.getFullYear() < year) {
         return `01-01-${year}`;
     }
-  if (date.getDate() < 10) {
-    return `0${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
+    if (date.getMonth() < 10) {
+    var dd = String(date.getDate()).padStart(2, "0");
   }
-  return `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
+  if (date.getDate() < 10) {
+    var mm = String(date.getMonth() + 1).padStart(2, "0");
+  }
+  return `${dd}-${mm}-${year}`;
 }
+console.log(firstDayWeek(2,"0001"))
 
