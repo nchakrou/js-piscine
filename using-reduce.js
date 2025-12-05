@@ -10,7 +10,7 @@ function sumOrMul(arr, i = 0) {
   }, i);
 }
 function funcExec(arr) {
-  return arr.reduce((p, fn) => fn(p));
+  return arr.reduce((p, fn) => fn(p),0);
 }
 console.log(
   sumOrMul([1, 2, 3, 5, 8], 5) // (((((5 + 1) * 2) + 3) + 5) * 8) -> 160
