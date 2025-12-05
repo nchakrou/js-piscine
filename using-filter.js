@@ -13,7 +13,7 @@ function filter5Vowels(arr) {
 function filter1DistinctVowel(arr) {
   return arr.filter((n) => {
     let res = n.toLowerCase().match(/[aeiou]/g);
-    return new Set(res).length == 1;
+    return new Set(res).size == 1;
   });
 }
 function multiFilter(arr) {
