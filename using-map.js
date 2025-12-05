@@ -14,13 +14,15 @@ function upperCasingStates(arr) {
 }
 
 function fahrenheitToCelsius(arr) {
+  
   let res = arr.map((m) => {
     let k = m.split("°");
     k[0] = Math.floor((k[0] - 32) * (5 / 9));
     k[1] = "C";
-    return k;
+
+    return k.join("°");
   });
-  return res;
+  return res
 }
 function trimTemp(arr) {
   let res = arr.map((obj) => {
@@ -42,3 +44,5 @@ function tempForecasts(arr) {
   });
   return res;
 }
+
+
