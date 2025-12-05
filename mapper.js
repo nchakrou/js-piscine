@@ -16,5 +16,5 @@ function flatMap(arr,fn){
         }
 
     }
-    return temp
+    return res
 }
