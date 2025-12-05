@@ -14,7 +14,6 @@ function upperCasingStates(arr) {
 }
 
 function fahrenheitToCelsius(arr) {
-  
   let res = arr.map((m) => {
     let k = m.split("°");
     k[0] = Math.floor((k[0] - 32) * (5 / 9));
@@ -22,7 +21,7 @@ function fahrenheitToCelsius(arr) {
 
     return k.join("°");
   });
-  return res
+  return res;
 }
 function trimTemp(arr) {
   let res = arr.map((obj) => {
@@ -36,14 +35,11 @@ function tempForecasts(arr) {
     let temp = n.temperature.replaceAll(" ", "").split("°");
     temp[0] = Math.floor((temp[0] - 32) * (5 / 9));
     let tempirat = temp[0] + "°" + "Celsius ";
-    let c = n.city
+    let c = n.city;
     let cit = c[0].toUpperCase() + c.slice(1);
-    let s = n.state.replaceAll(" ", "");
+    let s = n.state;
     let stat = s[0].toUpperCase() + s.slice(1);
     return tempirat + "in " + cit + ", " + stat;
   });
   return res;
 }
-
-
-
