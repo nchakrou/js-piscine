@@ -9,9 +9,7 @@ function sumOrMul(arr, i = 0) {
     return p + c;
   }, i);
 }
-function funcExec(arr) {
-  return arr.reduce((p, fn) => fn(p),0);
+function funcExec(arr,i=0) {
+  return arr.reduce((p, fn) => fn(p),i);
 }
-console.log(
-  sumOrMul([1, 2, 3, 5, 8], 5) // (((((5 + 1) * 2) + 3) + 5) * 8) -> 160
-);
+
