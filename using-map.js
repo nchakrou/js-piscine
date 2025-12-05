@@ -36,7 +36,7 @@ function tempForecasts(arr) {
     let temp = n.temperature.replaceAll(" ", "").split("°");
     temp[0] = Math.floor((temp[0] - 32) * (5 / 9));
     let tempirat = temp[0] + "°" + "Celsius ";
-    let c = n.city.replaceAll(" ", "");
+    let c = n.city
     let cit = c[0].toUpperCase() + c.slice(1);
     let s = n.state.replaceAll(" ", "");
     let stat = s[0].toUpperCase() + s.slice(1);
@@ -44,5 +44,6 @@ function tempForecasts(arr) {
   });
   return res;
 }
+
 
 
