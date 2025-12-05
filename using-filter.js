@@ -20,7 +20,7 @@ function multiFilter(arr) {
 return arr.filter((n) => {
     let cap = n.capital.length >=8
     let nam = /^[^aeiou]/i.test(n.name)
-    let tage = /[aeiou]/.test(n.tag)
+    let tage = /[aeiou]+/i.test(n.tag)
     return cap && nam && tage && n.region!=="South"
   });
 }
