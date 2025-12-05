@@ -37,9 +37,10 @@ function tempForecasts(arr) {
     let tempirat = temp[0] + "°" + "Celsius ";
     let c = n.city;
     let cit = c[0].toUpperCase() + c.slice(1);
-    let s = n.state;
-    let stat = s[0].toUpperCase() + s.slice(1);
-    return tempirat + "in " + cit + ", " + stat;
+    let s = n.state.split(" ");
+    let stat = s.map(l => l[0].toUpperCase() + l.slice(1))
+    return tempirat + "in " + cit + ", " + stat.join(" ");
   });
   return res;
 }
+
