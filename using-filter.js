@@ -4,7 +4,7 @@ function filterShortStateName(arr) {
 function filterStartVowel(arr) {
   return arr.filter((n) => /^[aeiou]/i.test(n));
 }
-function filter5Vowel(arr) {
+function filter5Vowels(arr) {
   return arr.filter((n) =>
     /[aeiou].*[aeiou].*[aeiou].*[aeiou].*[aeiou]/i.test(n)
   );
