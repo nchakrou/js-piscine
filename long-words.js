@@ -7,6 +7,6 @@ function oneLongWord(arr) {
   return arr.some(isBelowThreshold);
 }
 function noLongWords(arr) {
-  const isBelowThreshold = (currentValue) => currentValue.length <= 7;
+  const isBelowThreshold = (currentValue) => currentValue.length < 7;
   return arr.every(isBelowThreshold);
 }
