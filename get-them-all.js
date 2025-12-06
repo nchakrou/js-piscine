@@ -9,7 +9,7 @@ const b = Array.from(document.body.querySelectorAll("*:not(.classical)"))
 return [a,b]
 }
 export const getActive = ()=>{
-const a = Array.from(document.querySelectorAll("classical.active"))
+const a = Array.from(document.querySelectorAll(".classical.active"))
 const b = Array.from(document.querySelectorAll("a:not(.classical.active)"))
 return [a,b]
 }
