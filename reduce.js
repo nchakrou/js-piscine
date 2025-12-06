@@ -22,3 +22,4 @@ function reduceRight(arr, fn, acc = arr[arr.length - 1]) {
   }
   return acc;
 }
+
