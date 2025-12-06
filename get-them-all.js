@@ -14,7 +14,7 @@ const b = Array.from(document.querySelectorAll("a:not(.classical.active)"))
 return [a,b]
 }
 export const getBonannoPisano = ()=>{
-const a = [document.getElementById("BonannoPisano")]
-const b = Array.from(document.body.querySelectorAll("a.classical.active:not(#BonannoPisano)"))
+ const a=document.getElementById("BonannoPisano")
+const b = Array.from(document.body.querySelectorAll(".classical.active:not(#BonannoPisano)"))
 return [a,b]
 }
