@@ -1,11 +1,11 @@
 export const getArchitects = ()=>{
     const a = Array.from(document.getElementsByTagName("a"))
-    const b = Array.from(document.body.querySelectorAll(":not(a)"))
+    const b = Array.from(document.body.querySelectorAll("*:not(a)"))
     return [a,b]
 }
 export const getClassical = ()=>{
 const a = Array.from(document.getElementsByClassName("classical"))
-const b = Array.from(document.body.getElementsByClassName(":not(classical)"))
+const b = Array.from(document.body.getElementsByClassName("*:not(classical)"))
 return [a,b]
 }
 export const getActive = ()=>{
