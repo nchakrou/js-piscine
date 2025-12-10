@@ -2,7 +2,7 @@ function deepCopy(arg) {
   if (Array.isArray(arg)) {
     let res = [];
     for (let v of arg) {
-      if (Array.isArray(arg)) {
+      if (Array.isArray(v)) {
         res.push(deepCopy(v));
       } else {
         res.push(v);
@@ -17,6 +17,7 @@ function deepCopy(arg) {
         res[k] = deepCopy(v);
       }
     }
+  } else {
+    return arg;
   }
-  return arg;
 }
