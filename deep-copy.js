@@ -8,6 +8,7 @@ function deepCopy(arg) {
         res.push(v);
       }
     }
+    return res
   } else if (typeof arg == "object") {
     let res = {};
     for (let [k, v] of Object.entries(arg)) {
@@ -17,6 +18,7 @@ function deepCopy(arg) {
         res[k] = deepCopy(v);
       }
     }
+    return res
   } else {
     return arg;
   }
