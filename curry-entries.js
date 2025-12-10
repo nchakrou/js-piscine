@@ -26,9 +26,15 @@ function mapCurry(fn) {
     return res;
   };
 }
+
+    reduceCurry((acc, [k, v]) => acc.concat(' ', `${k}:${v.id}`))(
+      personnel,
+      'personnel:',
+    ),
+    'personnel: lukeSkywalker:5 sabineWren:82 zebOrellios:22 ezraBridger:15 calebDume:11',
+  
 function reduceCurry(fn) {
-  return function (obj) {
-    let acc = 0;
+  return function (obj,acc=0) {
     for (let [k, v] of Object.entries(obj)) {
       acc = fn(acc, [k, v]);
     }
