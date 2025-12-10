@@ -37,7 +37,7 @@ function cartTotal(cart) {
   for (let [item, grams] of Object.entries(cart)) {
     res[item] = {};
     for (let [nutrient, value] of Object.entries(nutritionDB[item])) {
-      res[item][nutrient] = Number((value * grams / 100).toFixed(1));
+      res[item][nutrient] = Number((value * grams / 100).toFixed(3));
     }
   }
   return res;
