@@ -2,10 +2,9 @@ const words = ["i", "you", "he", "she", "it", "they", "we"];
 
 function pronoun(arg) {
   const res = {};
-  const split = arg.split(" ");
+  const split = arg.toLowerCase().split(/[\s,.]+/);
 
   for (let i = 0; i < split.length; i++) {
-
     if (words.includes(split[i])) {
       res[split[i]] = res[split[i]] ? res[split[i]] : { word: [], count: 0 };
       res[split[i]].count++;
