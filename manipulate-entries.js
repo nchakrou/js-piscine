@@ -27,7 +27,7 @@ function totalCalories(obj) {
   for (let key in obj) {
     res += (obj[key] / 100) * nutritionDB[key].calories;
   }
-  return res;
+  return Number(res.toFixed(1));
 }
 function lowCarbs(obj) {
   return filterEntries(obj, ([a, b]) => (b / 100) * nutritionDB[a].carbs < 50);
@@ -38,7 +38,7 @@ function cartTotal(obj) {
     let a = obj[key1] / 100;
     res[key1] = {};
     for (let key2 in nutritionDB[key1]) {
-      res[key1][key2] = Math.round(nutritionDB[key1][key2] * a);
+      res[key1][key2] = Number((nutritionDB[key1][key2] * a).toFixed(1));
     }
   }
   return res;
