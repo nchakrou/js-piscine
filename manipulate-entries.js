@@ -1,7 +1,7 @@
 function filterEntries(obj, fn) {
   let res = {};
   for (let [key, value] of Object.entries(obj)) {
-    if (fn(key, value)) {
+    if (fn([key, value])) {
       res[key] = value;
     }
   }
@@ -17,7 +17,7 @@ function mapEntries(obj, fn) {
 }
 function reduceEntries(obj, fn, acc = 0) {
   for (let [key, value] of Object.entries(obj)) {
-    acc = fn(acc, key, value);
+    acc = fn(acc, [key, value]);
   }
   return acc;
 }
@@ -30,7 +30,7 @@ function totalCalories(obj) {
   return res;
 }
 function lowCarbs(obj) {
-  return filterEntries(obj, (a, b) => (b / 100) * nutritionDB[a].carbs < 50);
+  return filterEntries(obj, ([a, b]) => (b / 100) * nutritionDB[a].carbs < 50);
 }
 function cartTotal(obj) {
   let res = {};
