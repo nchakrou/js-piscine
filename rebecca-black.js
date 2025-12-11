@@ -1,15 +1,13 @@
 function isFriday(date) {
-    return date.getDay() === 5;
+    return date.getDay() == 5
 }
 function isWeekend(date) {
-    return date.getDay() === 6 || date.getDay() === 0;
+    return date.getDay() == 0 || date.getDay() == 6
 }
 function isLeapYear(date) {
-    return date.getFullYear() % 4 === 0;
+    return date.getFullYear() % 4 == 0
 }
 function isLastDayOfMonth(date) {
-    const next = new Date(date);
-    next.setDate(next.getDate() + 1);
-    return next.getDate() === 1;
+    const n = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+    return n.getDate() == 1
 }
-console.log(isLastDayOfMonth(new Date("2020-01-31")));
