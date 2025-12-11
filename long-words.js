@@ -1,12 +1,7 @@
 function longWords(arr) {
-    for (let i of arr) {        
-        if ( i.length < 5) {  
-            return false
-        }
-
-    }
-    return true
+  return  arr.every((n)=>n.length>=5)
 }
+
 function oneLongWord(arr) {
     console.log("o", arr);
     for (let i of arr) {
@@ -27,4 +22,3 @@ function noLongWords(arr) {
     }
     return true
 }
-
