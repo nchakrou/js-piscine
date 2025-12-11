@@ -1,3 +1,4 @@
+
 function filterKeys(obj, fn) {
     let res = {}
     for (let k in obj) {
@@ -16,7 +17,10 @@ function mapKeys(obj, fn) {
     return res
 }
 function reduceKeys(obj, fn, acc) {
-    let first = !!acc
+    let first = true
+    if (acc == undefined) {
+        first = false
+    }
     for (let k in obj) {
         if (!first) {
             acc = k
