@@ -1,4 +1,4 @@
-function debounceTrailing(fn, delay) {
+function debounce(fn, delay) {
     let timer
     return (...args) => {
         clearTimeout(timer)
