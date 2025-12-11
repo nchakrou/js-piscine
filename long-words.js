@@ -1,12 +1,28 @@
-function longWords(arr) {
-  const isBelowThreshold = (currentValue) => currentValue.length >= 5;
-  return arr.every(isBelowThreshold);
+function longWords(arr){
+    for (let i of arr){
+       if (typeof i !="string"||i.length<5){
+        return false
+       }
+        
+    }
+    return true
 }
-function oneLongWord(arr) {
- const isBelowThreshold = (currentValue) => currentValue.length >= 10;
-  return arr.some(isBelowThreshold);
+function oneLongWord(arr){
+    for (let i of arr){
+        
+       if (typeof i =="string"&&i.length>=10){
+        return true
+       }
+        
+    }
+    return false
 }
-function noLongWords(arr) {
-  const isBelowThreshold = (currentValue) => currentValue.length < 7;
-  return arr.every(isBelowThreshold);
+function noLongWords(arr){
+      for (let i of arr){
+       if (typeof i =="string"&&i.length>=7){
+        return false
+       }
+        
+    }
+    return true
 }
