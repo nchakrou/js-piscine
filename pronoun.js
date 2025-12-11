@@ -3,18 +3,19 @@ function pronoun(str) {
     let res = {}
     const sp = str.split(/[ \n.,]/)
     for (let i in sp) {
-        if (words.includes(sp[i])) {
+        let w = sp[i].toLowerCase()
+        if (words.includes(w)) {
             let next = sp[+i + 1]
 
-            if (res[sp[i]] === undefined) {
-                res[sp[i]] = { word: [], count: 0 }
+            if (res[w] === undefined) {
+                res[w] = { word: [], count: 0 }
             }
             if (!words.includes(next) && next) {
 
-                res[sp[i]].word.push(next)
-                res[sp[i]].count++
+                res[w].word.push(next)
+                res[w].count++
             } else {
-                res[sp[i]].count++
+                res[w].count++
 
             }
 
