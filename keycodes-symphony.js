@@ -1,34 +1,34 @@
-const color =["blue","blueviolet","brown","burlywood","orange","cadetblue","forestgreen","chartreuse","chocolate","coral","cornflowerblue","cornsilk","crimson","cyan","darkblue","darkcyan","darkgoldenrod","darkgreen","darkgrey","darkkhaki","darkmagenta","Byzantine","darkolivegreen","darkorange","darkorchid","darkred","darksalmon","darkseagreen"]
-const ulphabet =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const alpha = "qwertyuiopasdfghjklzxcvbnm"
+const colores = ["DarkMagenta","DarkGoldenRod","DarkGray","DarkGreen","DarkCyan","AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson","Cyan","DarkBlue"]
 export function compose(){
-    document.addEventListener("keydown",(event)=>{
-        let key = event.key
-        if (/^[a-z]$/.test(key)){
+
+    document.body.addEventListener("keydown",(key)=>{
+        if (/^[a-z]$/.test(key.key)){
             let index = 0
-            while (index<=ulphabet.length-1 ){
-                if (ulphabet[index]===key){
+            while (index<alpha.length){
+                if (alpha[index]==key.key){
                     break
                 }
                 index++
             }
-
-            let div =document.createElement("div")
+            const div = document.createElement("div")
             div.classList.add("note")
-            div.textContent=key
-            div.style.backgroundColor=color[index]
-            document.body.append(div)
-
-        }else if (key === "Backspace"){
-            let l = document.querySelectorAll(".note")
-            let node =l[l.length-1]
-            if (node){
-                node.remove()
+            
+    div.textContent=key.key
+    div.style.backgroundColor=colores[index]
+    document.body.append(div)
+   
+        }else if (key.key === "Backspace"){
+            const dvs = document.querySelectorAll(".note")
+            if (dvs.length!==0){
+                dvs[dvs.length-1].remove()
             }
-        }else {
-            let l = document.body.querySelectorAll(".note").forEach(e=>e.remove())
-            l
-            
-            
+        }else if (key.key === "Escape"){
+            const dvs = document.querySelectorAll(".note")
+            for (let i = 0 ;i<dvs.length;i++){
+                 dvs[i].remove()
+            }
+
         }
     })
 }
