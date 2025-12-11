@@ -9,7 +9,7 @@ function noLongWords(arr) {
     console.log("n", arr);
 
     for (let i of arr) {
-        if (i.length > 7) {
+        if (i.length >= 7) {
             return false
         }
 
