@@ -3,13 +3,7 @@ function longWords(arr) {
 }
 
 function oneLongWord(arr) {
-    console.log("o", arr);
-    for (let i of arr) {
-        if (i.length >= 10) {
-            return true
-        }
-    }
-    return false
+    return arr.some((n)=>n.length>=10)
 }
 function noLongWords(arr) {
     console.log("n", arr);
