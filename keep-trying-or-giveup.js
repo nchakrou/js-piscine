@@ -14,6 +14,6 @@ function timeout(delay, callback) {
     const timer = new Promise((_, reject) =>
       setTimeout(() => reject(new Error("timeout")), delay)
     );
-    return Promise.race([callback(...arg), timer]);
+    return  await Promise.race([callback(...arg), timer]);
   };
 }
