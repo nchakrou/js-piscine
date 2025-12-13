@@ -12,5 +12,5 @@ function interpolation({ step, start, end, callback, duration }) {
         } else {
             clearInterval(timer)
         }
-    }, wait)
+    }, delay)
 }
