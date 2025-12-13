@@ -1,4 +1,4 @@
-function interpolation({ step, start, end, fn, duration }) {
+function interpolation({ step, start, end, callback, duration }) {
   const amountToAdd = (end - start) / step;
   const delay = duration / step;
 
@@ -8,7 +8,7 @@ function interpolation({ step, start, end, fn, duration }) {
   const timer = setInterval(() => {
     if (count < step) {
       const distance = count / step;
-      fn([distance, currentPoint]);
+      callback([distance, currentPoint]);
       currentPoint += amountToAdd;
       count++;
     } else {
