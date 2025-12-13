@@ -3,25 +3,24 @@ function throttle(fn, delay) {
   return function (...arg) {
     if (!timer) {
       timer = setTimeout(() => {
-        fn(...arg);
         timer = null;
+        fn(...arg);
       }, delay);
     }
   };
 }
 
 function opThrottle(fn, delay, obj={}) {
-    let timer
+  let timer;
 
-    return function (...args) {
+  return function (...args) {
+    if (!timer) {
+      if (obj.leading) fn(...args);
 
-        if (!timer) {
-            if (obj.leading) fn(...args);
-
-            timer = setTimeout(() => {
-                timer = null;
-                if (!obj.leading) fn(...args);
-            }, delay);
-        }
-    };
+      timer = setTimeout(() => {
+        timer = null;
+        if (!obj.leading) fn(...args);
+      }, delay);
+    }
+  };
 }
