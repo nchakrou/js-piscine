@@ -10,17 +10,17 @@ function throttle(fn, delay) {
   };
 }
 
-function opThrottle(fn, delay, leading = false) {
+function opThrottle(fn, delay, obj={}) {
     let timer
 
     return function (...args) {
 
         if (!timer) {
-            if (leading) fn(...args);
+            if (obj.leading) fn(...args);
 
             timer = setTimeout(() => {
                 timer = null;
-                if (!leading) fn(...args);
+                if (!obj.leading) fn(...args);
             }, delay);
         }
     };
