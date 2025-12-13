@@ -12,7 +12,7 @@ function retry(count, callback) {
 function timeout(delay, callback) {
   return async function (...arg) {
     const timer = new Promise((_, reject) =>
-      setInterval(() => reject(new Error("timeout")), delay)
+      setTimeout(() => reject(new Error("timeout")), delay)
     );
     return Promise.race(callback(...arg), timer);
   };
