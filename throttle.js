@@ -2,9 +2,9 @@ function throttle(fn, delay) {
   let timer;
   return function (...arg) {
     if (!timer) {
+      fn(...arg);
       timer = setTimeout(() => {
         timer = null;
-        fn(...arg);
       }, delay);
     }
   };
