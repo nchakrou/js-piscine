@@ -8,8 +8,8 @@ function interpolation({ step, start, end, callback, duration }) {
   const timer = setInterval(() => {
     if (count < step) {
       const distance = count / step;
+      currentPoint = start + (count * amountToAdd)
       callback([distance, currentPoint]);
-      currentPoint += amountToAdd;
       count++;
     } else {
       clearInterval(timer);
