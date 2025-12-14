@@ -5,7 +5,7 @@ async function getJSON(path, params = {}) {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(response.status);
+      throw new Error(response.statusText);
     }
 
     const result = await response.json();
