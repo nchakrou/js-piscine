@@ -9,11 +9,11 @@ async function getJSON(path, params = {}) {
     }
 
     const result = await response.json();
-    if (result.Error) {
-      throw result.Error;
+    if (result.error) {
+      throw new Error(result.error)
     }
     return result.data;
   } catch (err) {
-    throw err.message;
+    throw new Error(err.message);
   }
 }
