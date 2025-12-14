@@ -1,6 +1,8 @@
 async function getJSON(path, params = "") {
   try {
-    const response = await fetch(path + params);
+     const query = new URLSearchParams(params).toString()
+    const url = query ? `${path}?${query}` : path
+    const response = await fetch(url);
 
     if (!response.ok) {
       throw new Error(response.status);
