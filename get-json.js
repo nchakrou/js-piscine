@@ -9,7 +9,7 @@ async function getJSON(path, params = "") {
     }
 
     const result = await response.json();
-    return result;
+    return result.data;
   } catch (error) {
     throw error.message;
   }
