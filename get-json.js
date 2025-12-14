@@ -9,8 +9,11 @@ async function getJSON(path, params = "") {
     }
 
     const result = await response.json();
+    if (!result.Error){
+        throw result.Error
+    }
     return result.data;
-  } catch (error) {
-    throw error.message;
+  } catch (err) {
+    throw err.message
   }
 }
