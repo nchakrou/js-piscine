@@ -3,8 +3,12 @@ if (arch.length == 1){
     arch = arch.join(" ")
     arch = arch.split(" ")
 }
-
-for (let l of arch) {
-  let mid = Math.ceil(l.length / 2);
-  console.log(l.slice(mid) + l.slice(0, mid));
+let res = ""
+for (let i = 0; i < arch.length; i++) {
+  let mid = Math.ceil(arch.length / 2);
+  if (i != 0){
+    res+=" "
+  }
+  res+=arch[i].slice(mid)+arch[i].slice(0,mid)
 }
+console.log(res);
