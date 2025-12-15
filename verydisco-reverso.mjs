@@ -4,7 +4,7 @@ let arch =  await readFile("verydisco.txt")
 arch = arch.toString().split(" ")
 let res = ""
 for (let i = 0; i < arch.length; i++) {
-  let mid = Math.ceil(arch[i].length / 2);
+  let mid = Math.floor(arch[i].length / 2);
   if (i != 0){
     res+=" "
   }
