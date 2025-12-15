@@ -5,7 +5,7 @@ if (arch.length == 1){
 }
 let res = ""
 for (let i = 0; i < arch.length; i++) {
-  let mid = Math.ceil(arch.length / 2);
+  let mid = Math.ceil(arch[i].length / 2);
   if (i != 0){
     res+=" "
   }
