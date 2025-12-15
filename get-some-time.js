@@ -1,5 +1,7 @@
 function firstDayWeek(number, year) {
-  const date = new Date(parseInt(year),0,1);
+  const date = new Date(1,0,1);
+  date.setFullYear(parseInt(year))
+  
   const d = date.getDay()
  const days=[6,0,1,2,3,4,5]
   date.setDate(date.getDate() +( (number -1 ) * 7)-days[d]);
@@ -18,5 +20,5 @@ function firstDayWeek(number, year) {
   return `${mm}-${dd}-${year}`;
   
 }
-console.log(firstDayWeek(52, '1000'));
+
 
