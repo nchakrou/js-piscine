@@ -1,6 +1,9 @@
 import {readFile} from 'fs/promises'
 
-let arch =  await readFile("verydisco.txt")
+const fileName = process.argv[2]
+
+
+let arch =  await readFile(fileName)
 arch = arch.toString().split(" ")
 let res = ""
 for (let i = 0; i < arch.length; i++) {
