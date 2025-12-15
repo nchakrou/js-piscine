@@ -1,12 +1,8 @@
 function firstDayWeek(number, year) {
   const date = new Date(year + "-01-01");
-  date.setDate(date.getDate() + (number - 1) * 7);
-  if (date.getDay() == 0) {
-    date.setDate(date.getDate() - 1);
-  }
-  while (date.getDay() > 1) {
-    date.setDate(date.getDate() - 1);
-  }
+  const d = date.getDay()
+  date.setDate(date.getDate() +( (number - 1) * 7)-d);
+
   if (date.getFullYear() < year) {
     return `01-01-${year}`;
   }
