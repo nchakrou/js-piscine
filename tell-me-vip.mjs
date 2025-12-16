@@ -4,7 +4,7 @@ const arg = process.argv[2]
 const files = await readdir(arg)
 const guests = []
 for (const file of files) {
-    const Path = dirPath+"/"+file
+    const Path = arg+"/"+file
     const content = await readFile(Path, 'utf8')
     const data = JSON.parse(content)
     
