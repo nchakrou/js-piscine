@@ -15,7 +15,7 @@ const server = createServer((req, res) => {
       res.end(body);
     } catch (error) {
       res.statusCode = 500
-      res.end({ error: "server failed" })
+      res.end(JSON.stringify({ error: "server failed" }))
     }
   })
 })
